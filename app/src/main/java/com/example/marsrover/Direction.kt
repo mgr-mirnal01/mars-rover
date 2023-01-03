@@ -1,22 +1,22 @@
 package com.example.marsrover
 
-enum class Direction (val direction : String){
+enum class Direction{
 
-    NORTH("N"){
+    NORTH{
         override fun turnLeft() = WEST
         override fun turnRight() = EAST
               },
-    WEST("W") {
+    WEST{
         override fun turnLeft(): Direction = SOUTH
         override fun turnRight() = NORTH
 
     },
-    SOUTH("S") {
+    SOUTH {
         override fun turnLeft(): Direction = EAST
         override fun turnRight() = WEST
 
     },
-    EAST("E") {
+    EAST {
         override fun turnLeft(): Direction = NORTH
         override fun turnRight() = SOUTH
 

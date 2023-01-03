@@ -1,7 +1,5 @@
 package com.example.marsrover
 
-import com.example.marsrover.exceptions.IllegalMoveException
-import kotlin.jvm.Throws
 
 
 //Rover should be able to turn right, turn left and move forward
@@ -28,10 +26,10 @@ class Rover (var plateau : Plateau, var position: Position) {
         }
 
     }
-    @Throws(IllegalMoveException::class)
+
     private fun moveForward() {
-        if(plateau.isValidMove(position.moveForward()))
-            position = position.moveForward()
+        if(plateau.isValidMove(position.moveForward())) // if move forward is still inside plateau
+            position = position.moveForward() // move forward  or do nothing
     }
 }
 
